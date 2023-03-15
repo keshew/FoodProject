@@ -7,16 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		863C576929A8F9D1002C7A4B /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C576529A8F9D1002C7A4B /* SearchPresenter.swift */; };
+		863C576A29A8F9D1002C7A4B /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C576629A8F9D1002C7A4B /* SearchRouter.swift */; };
+		863C576B29A8F9D1002C7A4B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C576729A8F9D1002C7A4B /* SearchViewController.swift */; };
+		863C576C29A8F9D1002C7A4B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C576829A8F9D1002C7A4B /* SearchViewModel.swift */; };
+		863C577029A8FA19002C7A4B /* SearchViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C576F29A8FA19002C7A4B /* SearchViewCollectionCell.swift */; };
+		863EC31E29A7CFB7004BE1D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 863EC31D29A7CFB7004BE1D4 /* SnapKit */; };
+		863EC32029A7D132004BE1D4 /* ReadViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863EC31F29A7D132004BE1D4 /* ReadViewCollectionCell.swift */; };
+		863EC32229A7D176004BE1D4 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863EC32129A7D176004BE1D4 /* UILabel+.swift */; };
+		863EC32529A7D1E7004BE1D4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863EC32429A7D1E7004BE1D4 /* UIColor+.swift */; };
+		863EC32829A7E32C004BE1D4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 863EC32729A7E32C004BE1D4 /* Kingfisher */; };
+		86589BEC29ACFB54007D819C /* SaladPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86589BE829ACFB54007D819C /* SaladPresenter.swift */; };
+		86589BED29ACFB54007D819C /* SaladRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86589BE929ACFB54007D819C /* SaladRouter.swift */; };
+		86589BEE29ACFB54007D819C /* SaladViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86589BEA29ACFB54007D819C /* SaladViewController.swift */; };
+		86589BEF29ACFB54007D819C /* SaladViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86589BEB29ACFB54007D819C /* SaladViewModel.swift */; };
+		86589BF529AD2974007D819C /* SoupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86589BF129AD2974007D819C /* SoupPresenter.swift */; };
+		86589BF629AD2974007D819C /* SoupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86589BF229AD2974007D819C /* SoupRouter.swift */; };
+		86589BF729AD2974007D819C /* SoupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86589BF329AD2974007D819C /* SoupViewController.swift */; };
+		86589BF829AD2974007D819C /* SoupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86589BF429AD2974007D819C /* SoupViewModel.swift */; };
+		868DBAF929C20F4C00887403 /* ReceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DBAF829C20F4C00887403 /* ReceptCell.swift */; };
+		868DBAFF29C2286400887403 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DBAFB29C2286400887403 /* DetailPresenter.swift */; };
+		868DBB0029C2286400887403 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DBAFC29C2286400887403 /* DetailRouter.swift */; };
+		868DBB0129C2286400887403 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DBAFD29C2286400887403 /* DetailViewController.swift */; };
+		868DBB0229C2286400887403 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DBAFE29C2286400887403 /* DetailViewModel.swift */; };
 		86EA7BB129A7C4AD00522FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BB029A7C4AD00522FC9 /* AppDelegate.swift */; };
 		86EA7BB329A7C4AD00522FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BB229A7C4AD00522FC9 /* SceneDelegate.swift */; };
-		86EA7BB529A7C4AD00522FC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BB429A7C4AD00522FC9 /* ViewController.swift */; };
-		86EA7BB829A7C4AD00522FC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7BB629A7C4AD00522FC9 /* Main.storyboard */; };
 		86EA7BBB29A7C4AD00522FC9 /* FoodProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BB929A7C4AD00522FC9 /* FoodProject.xcdatamodeld */; };
 		86EA7BBD29A7C4AE00522FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7BBC29A7C4AE00522FC9 /* Assets.xcassets */; };
 		86EA7BC029A7C4AE00522FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86EA7BBE29A7C4AE00522FC9 /* LaunchScreen.storyboard */; };
 		86EA7BCB29A7C4AE00522FC9 /* FoodProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BCA29A7C4AE00522FC9 /* FoodProjectTests.swift */; };
 		86EA7BD529A7C4AE00522FC9 /* FoodProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BD429A7C4AE00522FC9 /* FoodProjectUITests.swift */; };
 		86EA7BD729A7C4AE00522FC9 /* FoodProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BD629A7C4AE00522FC9 /* FoodProjectUITestsLaunchTests.swift */; };
+		86EA7BEA29A7C53800522FC9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BE629A7C53800522FC9 /* NetworkManager.swift */; };
+		86EA7BEB29A7C53800522FC9 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BE729A7C53800522FC9 /* ModuleBuilder.swift */; };
+		86EA7BEC29A7C53800522FC9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BE829A7C53800522FC9 /* TabBarController.swift */; };
+		86EA7BED29A7C53800522FC9 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7BE929A7C53800522FC9 /* NetworkModel.swift */; };
+		86EA7C0429A7C85600522FC9 /* ReadPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7C0029A7C85600522FC9 /* ReadPresenter.swift */; };
+		86EA7C0529A7C85600522FC9 /* ReadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7C0129A7C85600522FC9 /* ReadRouter.swift */; };
+		86EA7C0629A7C85600522FC9 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7C0229A7C85600522FC9 /* ReadViewController.swift */; };
+		86EA7C0729A7C85600522FC9 /* ReadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA7C0329A7C85600522FC9 /* ReadViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +66,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		863C576529A8F9D1002C7A4B /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		863C576629A8F9D1002C7A4B /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		863C576729A8F9D1002C7A4B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		863C576829A8F9D1002C7A4B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		863C576F29A8FA19002C7A4B /* SearchViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCollectionCell.swift; sourceTree = "<group>"; };
+		863EC31F29A7D132004BE1D4 /* ReadViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewCollectionCell.swift; sourceTree = "<group>"; };
+		863EC32129A7D176004BE1D4 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		863EC32429A7D1E7004BE1D4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		86589BE829ACFB54007D819C /* SaladPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaladPresenter.swift; sourceTree = "<group>"; };
+		86589BE929ACFB54007D819C /* SaladRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaladRouter.swift; sourceTree = "<group>"; };
+		86589BEA29ACFB54007D819C /* SaladViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaladViewController.swift; sourceTree = "<group>"; };
+		86589BEB29ACFB54007D819C /* SaladViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaladViewModel.swift; sourceTree = "<group>"; };
+		86589BF129AD2974007D819C /* SoupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoupPresenter.swift; sourceTree = "<group>"; };
+		86589BF229AD2974007D819C /* SoupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoupRouter.swift; sourceTree = "<group>"; };
+		86589BF329AD2974007D819C /* SoupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoupViewController.swift; sourceTree = "<group>"; };
+		86589BF429AD2974007D819C /* SoupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoupViewModel.swift; sourceTree = "<group>"; };
+		868DBAF829C20F4C00887403 /* ReceptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptCell.swift; sourceTree = "<group>"; };
+		868DBAFB29C2286400887403 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		868DBAFC29C2286400887403 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		868DBAFD29C2286400887403 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		868DBAFE29C2286400887403 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		86EA7BAD29A7C4AD00522FC9 /* FoodProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EA7BB029A7C4AD00522FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86EA7BB229A7C4AD00522FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		86EA7BB429A7C4AD00522FC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		86EA7BB729A7C4AD00522FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86EA7BBA29A7C4AD00522FC9 /* FoodProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodProject.xcdatamodel; sourceTree = "<group>"; };
 		86EA7BBC29A7C4AE00522FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86EA7BBF29A7C4AE00522FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +99,14 @@
 		86EA7BD029A7C4AE00522FC9 /* FoodProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EA7BD429A7C4AE00522FC9 /* FoodProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProjectUITests.swift; sourceTree = "<group>"; };
 		86EA7BD629A7C4AE00522FC9 /* FoodProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86EA7BE629A7C53800522FC9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		86EA7BE729A7C53800522FC9 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		86EA7BE829A7C53800522FC9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		86EA7BE929A7C53800522FC9 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		86EA7C0029A7C85600522FC9 /* ReadPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadPresenter.swift; sourceTree = "<group>"; };
+		86EA7C0129A7C85600522FC9 /* ReadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadRouter.swift; sourceTree = "<group>"; };
+		86EA7C0229A7C85600522FC9 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		86EA7C0329A7C85600522FC9 /* ReadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				863EC32829A7E32C004BE1D4 /* Kingfisher in Frameworks */,
+				863EC31E29A7CFB7004BE1D4 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +136,113 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		863C576D29A8F9E2002C7A4B /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				863C576529A8F9D1002C7A4B /* SearchPresenter.swift */,
+				863C576629A8F9D1002C7A4B /* SearchRouter.swift */,
+				863C576E29A8F9F2002C7A4B /* ViewController */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		863C576E29A8F9F2002C7A4B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				863C576829A8F9D1002C7A4B /* SearchViewModel.swift */,
+				863C576729A8F9D1002C7A4B /* SearchViewController.swift */,
+				863C576F29A8FA19002C7A4B /* SearchViewCollectionCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		863EC31A29A7CF5C004BE1D4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				863EC31B29A7CF6C004BE1D4 /* Controller */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		863EC31B29A7CF6C004BE1D4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7C0329A7C85600522FC9 /* ReadViewModel.swift */,
+				863EC31F29A7D132004BE1D4 /* ReadViewCollectionCell.swift */,
+				86EA7C0229A7C85600522FC9 /* ReadViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		863EC32329A7D17A004BE1D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				863EC32129A7D176004BE1D4 /* UILabel+.swift */,
+				863EC32429A7D1E7004BE1D4 /* UIColor+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		86589BF029ACFB59007D819C /* SaladModule */ = {
+			isa = PBXGroup;
+			children = (
+				86589BE829ACFB54007D819C /* SaladPresenter.swift */,
+				86589BE929ACFB54007D819C /* SaladRouter.swift */,
+				86589BEA29ACFB54007D819C /* SaladViewController.swift */,
+				86589BEB29ACFB54007D819C /* SaladViewModel.swift */,
+			);
+			path = SaladModule;
+			sourceTree = "<group>";
+		};
+		86589BF929AD2978007D819C /* SoupModule */ = {
+			isa = PBXGroup;
+			children = (
+				86589BF129AD2974007D819C /* SoupPresenter.swift */,
+				86589BF229AD2974007D819C /* SoupRouter.swift */,
+				86589BF329AD2974007D819C /* SoupViewController.swift */,
+				86589BF429AD2974007D819C /* SoupViewModel.swift */,
+			);
+			path = SoupModule;
+			sourceTree = "<group>";
+		};
+		8677330229AD30FD00540FF3 /* FoodModule */ = {
+			isa = PBXGroup;
+			children = (
+				86589BF929AD2978007D819C /* SoupModule */,
+				86589BF029ACFB59007D819C /* SaladModule */,
+			);
+			path = FoodModule;
+			sourceTree = "<group>";
+		};
+		8677330329AD310D00540FF3 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				868DBAFA29C2285000887403 /* DetailModule */,
+				86EA7BF429A7C54700522FC9 /* ReadModule */,
+				863C576D29A8F9E2002C7A4B /* SearchModule */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		868DBAF729C20F3000887403 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				868DBAF829C20F4C00887403 /* ReceptCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		868DBAFA29C2285000887403 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				868DBAFB29C2286400887403 /* DetailPresenter.swift */,
+				868DBAFC29C2286400887403 /* DetailRouter.swift */,
+				868DBAFD29C2286400887403 /* DetailViewController.swift */,
+				868DBAFE29C2286400887403 /* DetailViewModel.swift */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
 		86EA7BA429A7C4AD00522FC9 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +266,16 @@
 		86EA7BAF29A7C4AD00522FC9 /* FoodProject */ = {
 			isa = PBXGroup;
 			children = (
-				86EA7BB029A7C4AD00522FC9 /* AppDelegate.swift */,
-				86EA7BB229A7C4AD00522FC9 /* SceneDelegate.swift */,
-				86EA7BB429A7C4AD00522FC9 /* ViewController.swift */,
-				86EA7BB629A7C4AD00522FC9 /* Main.storyboard */,
-				86EA7BBC29A7C4AE00522FC9 /* Assets.xcassets */,
-				86EA7BBE29A7C4AE00522FC9 /* LaunchScreen.storyboard */,
-				86EA7BC129A7C4AE00522FC9 /* Info.plist */,
-				86EA7BB929A7C4AD00522FC9 /* FoodProject.xcdatamodeld */,
+				86EA7BE429A7C4DF00522FC9 /* Application */,
+				86EA7BE329A7C4D900522FC9 /* Helpers */,
+				86EA7BF629A7C56900522FC9 /* TabBar */,
+				86EA7BF529A7C55D00522FC9 /* Builder */,
+				868DBAF729C20F3000887403 /* Cells */,
+				8677330229AD30FD00540FF3 /* FoodModule */,
+				8677330329AD310D00540FF3 /* MainModule */,
+				86EA7BE529A7C4E600522FC9 /* CoreDataManager */,
+				86EA7BF729A7C58300522FC9 /* NetworkManager */,
+				863EC32329A7D17A004BE1D4 /* Extensions */,
 			);
 			path = FoodProject;
 			sourceTree = "<group>";
@@ -130,6 +297,68 @@
 			path = FoodProjectUITests;
 			sourceTree = "<group>";
 		};
+		86EA7BE329A7C4D900522FC9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7BBC29A7C4AE00522FC9 /* Assets.xcassets */,
+				86EA7BBE29A7C4AE00522FC9 /* LaunchScreen.storyboard */,
+				86EA7BC129A7C4AE00522FC9 /* Info.plist */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		86EA7BE429A7C4DF00522FC9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7BB029A7C4AD00522FC9 /* AppDelegate.swift */,
+				86EA7BB229A7C4AD00522FC9 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		86EA7BE529A7C4E600522FC9 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7BB929A7C4AD00522FC9 /* FoodProject.xcdatamodeld */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		86EA7BF429A7C54700522FC9 /* ReadModule */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7C0029A7C85600522FC9 /* ReadPresenter.swift */,
+				86EA7C0129A7C85600522FC9 /* ReadRouter.swift */,
+				863EC31A29A7CF5C004BE1D4 /* ViewController */,
+			);
+			path = ReadModule;
+			sourceTree = "<group>";
+		};
+		86EA7BF529A7C55D00522FC9 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7BE729A7C53800522FC9 /* ModuleBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		86EA7BF629A7C56900522FC9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7BE829A7C53800522FC9 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		86EA7BF729A7C58300522FC9 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				86EA7BE629A7C53800522FC9 /* NetworkManager.swift */,
+				86EA7BE929A7C53800522FC9 /* NetworkModel.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +375,10 @@
 			dependencies = (
 			);
 			name = FoodProject;
+			packageProductDependencies = (
+				863EC31D29A7CFB7004BE1D4 /* SnapKit */,
+				863EC32729A7E32C004BE1D4 /* Kingfisher */,
+			);
 			productName = FoodProject;
 			productReference = 86EA7BAD29A7C4AD00522FC9 /* FoodProject.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +451,10 @@
 				Base,
 			);
 			mainGroup = 86EA7BA429A7C4AD00522FC9;
+			packageReferences = (
+				863EC31C29A7CFB7004BE1D4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				863EC32629A7E32C004BE1D4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 86EA7BAE29A7C4AD00522FC9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,7 +473,6 @@
 			files = (
 				86EA7BC029A7C4AE00522FC9 /* LaunchScreen.storyboard in Resources */,
 				86EA7BBD29A7C4AE00522FC9 /* Assets.xcassets in Resources */,
-				86EA7BB829A7C4AD00522FC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +497,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86EA7BB529A7C4AD00522FC9 /* ViewController.swift in Sources */,
+				86EA7C0529A7C85600522FC9 /* ReadRouter.swift in Sources */,
+				86589BF829AD2974007D819C /* SoupViewModel.swift in Sources */,
+				86EA7BEA29A7C53800522FC9 /* NetworkManager.swift in Sources */,
+				863C576929A8F9D1002C7A4B /* SearchPresenter.swift in Sources */,
+				86589BED29ACFB54007D819C /* SaladRouter.swift in Sources */,
+				86589BEE29ACFB54007D819C /* SaladViewController.swift in Sources */,
+				863C576B29A8F9D1002C7A4B /* SearchViewController.swift in Sources */,
+				863EC32029A7D132004BE1D4 /* ReadViewCollectionCell.swift in Sources */,
+				863C576A29A8F9D1002C7A4B /* SearchRouter.swift in Sources */,
+				863C576C29A8F9D1002C7A4B /* SearchViewModel.swift in Sources */,
+				86589BF629AD2974007D819C /* SoupRouter.swift in Sources */,
+				863EC32229A7D176004BE1D4 /* UILabel+.swift in Sources */,
 				86EA7BB129A7C4AD00522FC9 /* AppDelegate.swift in Sources */,
+				86EA7C0429A7C85600522FC9 /* ReadPresenter.swift in Sources */,
+				868DBAF929C20F4C00887403 /* ReceptCell.swift in Sources */,
+				868DBB0229C2286400887403 /* DetailViewModel.swift in Sources */,
+				868DBB0029C2286400887403 /* DetailRouter.swift in Sources */,
+				86EA7C0629A7C85600522FC9 /* ReadViewController.swift in Sources */,
+				86EA7C0729A7C85600522FC9 /* ReadViewModel.swift in Sources */,
+				86589BF729AD2974007D819C /* SoupViewController.swift in Sources */,
+				868DBB0129C2286400887403 /* DetailViewController.swift in Sources */,
+				868DBAFF29C2286400887403 /* DetailPresenter.swift in Sources */,
+				86589BEC29ACFB54007D819C /* SaladPresenter.swift in Sources */,
+				86589BEF29ACFB54007D819C /* SaladViewModel.swift in Sources */,
 				86EA7BB329A7C4AD00522FC9 /* SceneDelegate.swift in Sources */,
+				86EA7BEC29A7C53800522FC9 /* TabBarController.swift in Sources */,
+				86EA7BEB29A7C53800522FC9 /* ModuleBuilder.swift in Sources */,
+				863C577029A8FA19002C7A4B /* SearchViewCollectionCell.swift in Sources */,
+				86EA7BED29A7C53800522FC9 /* NetworkModel.swift in Sources */,
+				86589BF529AD2974007D819C /* SoupPresenter.swift in Sources */,
 				86EA7BBB29A7C4AD00522FC9 /* FoodProject.xcdatamodeld in Sources */,
+				863EC32529A7D1E7004BE1D4 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +565,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		86EA7BB629A7C4AD00522FC9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				86EA7BB729A7C4AD00522FC9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		86EA7BBE29A7C4AE00522FC9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,12 +699,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 59WWFG63NN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FoodProject/Info.plist;
+				INFOPLIST_FILE = FoodProject/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,12 +727,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 59WWFG63NN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FoodProject/Info.plist;
+				INFOPLIST_FILE = FoodProject/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +862,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		863EC31C29A7CFB7004BE1D4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		863EC32629A7E32C004BE1D4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		863EC31D29A7CFB7004BE1D4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 863EC31C29A7CFB7004BE1D4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		863EC32729A7E32C004BE1D4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 863EC32629A7E32C004BE1D4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		86EA7BB929A7C4AD00522FC9 /* FoodProject.xcdatamodeld */ = {
