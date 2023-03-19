@@ -18,6 +18,7 @@ struct Recipe: Codable {
     let weightWatcherSmartPoints: Int?
     let preparationMinutes, cookingMinutes, aggregateLikes, healthScore: Int?
     let creditsText, license, sourceName: String?
+    let extendedIngredients: [ExtendedIngredient]
     let pricePerServing: Double?
     let id: Int?
     let title: String?
@@ -44,6 +45,32 @@ struct Results: Codable {
     let image: String?
     let imageType: ImageType?
     let readyInMinutes, servings: Int?
+}
+
+struct ExtendedIngredient: Codable {
+    let id: Int
+    let image: String
+    let consistency: Consistency
+    let name, nameClean, original, originalName: String
+    let amount: Double
+    let unit: String
+    let meta: [String]
+    let measures: Measures
+}
+
+enum Consistency: String, Codable {
+    case liquid = "LIQUID"
+    case solid = "SOLID"
+}
+
+// MARK: - Measures
+struct Measures: Codable {
+    let us, metric: Metric
+}
+
+struct Metric: Codable {
+    let amount: Double
+    let unitShort, unitLong: String
 }
 
 enum ImageType: String, Codable {

@@ -10,6 +10,7 @@ protocol NetworkManagerProtocol: AnyObject {
     func getFood(completion: @escaping (Result<Food, Error>) -> Void)
     func getSalad(completion: @escaping (Result<Salad, Error>) -> Void)
     func getSoup(completion: @escaping (Result<Salad, Error>) -> Void)
+    func getCurrentRecept(id: Int, completion: @escaping (Result<Recipe, Error>) -> Void)
 }
 
 fileprivate enum APIType {
@@ -22,20 +23,26 @@ fileprivate enum APIType {
     case getDrinks
     case getDesserts
     
+    var apiKey: String {
+        return "29b6b28f28904fc3a4946eed49a5833b"
+    }
+    //29b6b28f28904fc3a4946eed49a5833b
+    //e5ddc77dc83842aba66108fb0ca9d2d2
+    //a1540512d48a4a6e805060358ee8ee2e
     
     var path: String {
         switch self {
-        case .getAllRecipe: return "random?number=20&apiKey=29b6b28f28904fc3a4946eed49a5833b&"
-        case .getSalad: return "complexSearch?type=salad&apiKey=29b6b28f28904fc3a4946eed49a5833b&"
-        case .getSoup: return "complexSearch?type=soup&apiKey=29b6b28f28904fc3a4946eed49a5833b&"
-        case .getSnack: return "complexSearch?type=snack&apiKey=29b6b28f28904fc3a4946eed49a5833b&"
-        case .getBread: return "complexSearch?type=bread&apiKey=29b6b28f28904fc3a4946eed49a5833b&"
-        case .getSous: return "complexSearch?type=sauce&apiKey=29b6b28f28904fc3a4946eed49a5833b&"
-        case .getDrinks: return "complexSearch?type=drink&apiKey=29b6b28f28904fc3a4946eed49a5833b&"
-        case .getDesserts: return "complexSearch?type=dessert&apiKey=29b6b28f28904fc3a4946eed49a5833b&"
+        case .getAllRecipe: return "random?number=20&apiKey=\(apiKey)&"
+        case .getSalad: return "complexSearch?type=salad&apiKey=\(apiKey)&"
+        case .getSoup: return "complexSearch?type=soup&apiKey=\(apiKey)&"
+        case .getSnack: return "complexSearch?type=snack&apiKey=\(apiKey)&"
+        case .getBread: return "complexSearch?type=bread&apiKey=\(apiKey)&"
+        case .getSous: return "complexSearch?type=sauce&apiKey=\(apiKey)&"
+        case .getDrinks: return "complexSearch?type=drink&apiKey=\(apiKey)&"
+        case .getDesserts: return "complexSearch?type=dessert&apiKey=\(apiKey)&"
         }
     }
-    //https://api.spoonacular.com/recipes/715415/information?apiKey=29b6b28f28904fc3a4946eed49a5833b&
+    //https://api.spoonacular.com/recipes/716406/information?apiKey=29b6b28f28904fc3a4946eed49a5833b&
     
     var baseURL: String {
         return "https://api.spoonacular.com/recipes/"
@@ -108,5 +115,24 @@ final class NetworkManager: NetworkManagerProtocol {
         }
         task.resume()
     }
+    
+    func getCurrentRecept(id: Int, completion: @escaping (Result<Recipe, Error>) -> Void) {
+        let request = URLRequest(url: URL(string: "https://api.spoonacular.com/recipes/\(id)/information?apiKey=29b6b28f28904fc3a4946eed49a5833b&")!)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            do {
+                guard let data else { return }
+                let obj = try JSONDecoder().decode(Recipe.self, from: data)
+                completion(.success(obj))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        task.resume()
+    }
+
 
 }

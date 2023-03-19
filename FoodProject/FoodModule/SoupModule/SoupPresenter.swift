@@ -2,14 +2,14 @@ import UIKit
 
 protocol SoupPresenterProtocol: AnyObject {
     init(view: SoupViewProtocol, network: NetworkManagerProtocol, router: SoupRouterProtocol?)
-    var viewModel: ProtocolSaladViewModel? { get set }
+    var viewModel: ProtocolSoupViewModel? { get set }
     func viewDidLoaded()
 }
 
 class SoupPresenter {
     weak var view: SoupViewProtocol?
     let network: NetworkManagerProtocol?
-    var viewModel: ProtocolSaladViewModel?
+    var viewModel: ProtocolSoupViewModel?
     var router: SoupRouterProtocol?
     
     required init(view: SoupViewProtocol, network: NetworkManagerProtocol, router: SoupRouterProtocol?) {
@@ -19,7 +19,7 @@ class SoupPresenter {
     }
     
     func viewDidLoaded() {
-        self.viewModel = SaladViewModel()
+        self.viewModel = SoupViewModel()
         self.network?.getSoup(completion: { [weak self] salad in
             DispatchQueue.main.async {
                 guard let self else { return }

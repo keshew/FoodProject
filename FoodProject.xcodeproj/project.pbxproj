@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8630043429C391380075015E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8630043329C391380075015E /* DetailView.swift */; };
 		863C576929A8F9D1002C7A4B /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C576529A8F9D1002C7A4B /* SearchPresenter.swift */; };
 		863C576A29A8F9D1002C7A4B /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C576629A8F9D1002C7A4B /* SearchRouter.swift */; };
 		863C576B29A8F9D1002C7A4B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C576729A8F9D1002C7A4B /* SearchViewController.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8630043329C391380075015E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		863C576529A8F9D1002C7A4B /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		863C576629A8F9D1002C7A4B /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		863C576729A8F9D1002C7A4B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				868DBAFB29C2286400887403 /* DetailPresenter.swift */,
 				868DBAFC29C2286400887403 /* DetailRouter.swift */,
 				868DBAFD29C2286400887403 /* DetailViewController.swift */,
+				8630043329C391380075015E /* DetailView.swift */,
 				868DBAFE29C2286400887403 /* DetailViewModel.swift */,
 			);
 			path = DetailModule;
@@ -513,6 +516,7 @@
 				86EA7C0429A7C85600522FC9 /* ReadPresenter.swift in Sources */,
 				868DBAF929C20F4C00887403 /* ReceptCell.swift in Sources */,
 				868DBB0229C2286400887403 /* DetailViewModel.swift in Sources */,
+				8630043429C391380075015E /* DetailView.swift in Sources */,
 				868DBB0029C2286400887403 /* DetailRouter.swift in Sources */,
 				86EA7C0629A7C85600522FC9 /* ReadViewController.swift in Sources */,
 				86EA7C0729A7C85600522FC9 /* ReadViewModel.swift in Sources */,

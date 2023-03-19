@@ -3,11 +3,11 @@ import Foundation
 protocol DetailViewModelProtocol: AnyObject {
     static var shared: DetailViewModel { get }
     init()
-//    var DetailViewModel: NetworkModel? { get set}
+    var detailViewModel: Recipe? { get set}
 }
 
 final class DetailViewModel: DetailViewModelProtocol {
     static var shared = DetailViewModel()
     init() {}
-//    var DetailViewModel: NetworkModel?
+    var detailViewModel: Recipe?
 }

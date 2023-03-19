@@ -54,7 +54,7 @@ class ReceptCell: UICollectionViewCell {
     private lazy var mainStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [imageOfRecept, nameOfRecept])
         stack.axis = .vertical
-        stack.spacing = 10
+        stack.spacing = 5
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -81,12 +81,17 @@ private extension ReceptCell {
     func setupView() {
         contentView.addSubview(mainStackView)
         mainStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(10)
+            make.topMargin.equalToSuperview().inset(10)
+            make.trailingMargin.leadingMargin.bottomMargin.equalToSuperview()
         }
         
-        imageOfTime.snp.makeConstraints { make in
-            make.height.equalTo(20)
-            make.width.equalTo(20)
+        imageOfRecept.snp.makeConstraints { make in
+            make.height.equalTo(200)
         }
+        
+//        imageOfTime.snp.makeConstraints { make in
+//            make.height.equalTo(20)
+//            make.width.equalTo(20)
+//        }
     }
 }

@@ -44,7 +44,17 @@ final class SaladViewController: UIViewController, SaladViewProtocol {
 }
 
 extension SaladViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(presenter?.viewModel?.salads?.results?[indexPath.row].id)
+        //presenter-router
+        let nav = UINavigationController()
+        let builder = ModuleBuilder()
+        let router = DetailRouter(navigationController: nav, builder: builder)
+        let test = builder.buildDetail(id: (presenter?.viewModel?.salads?.results?[indexPath.row].id)!, router: router)
+        let controller = UINavigationController(rootViewController: test)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
+    }
 }
 
 extension SaladViewController: UICollectionViewDataSource {
@@ -53,9 +63,9 @@ extension SaladViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadCollectionViewCell.identifier, for: indexPath) as? ReadCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReceptCell.identifier, for: indexPath) as? ReceptCell else { return UICollectionViewCell() }
         cell.setupCell(image: presenter?.viewModel?.salads?.results?[indexPath.row].image,
-                       title: presenter?.viewModel?.salads?.results?[indexPath.row].title ?? "")
+                       title: presenter?.viewModel?.salads?.results?[indexPath.row].title ?? "", time: String(describing: (presenter?.viewModel?.salads?.results?[indexPath.row].readyInMinutes) ?? 0))
         return cell
     }
 }
@@ -78,7 +88,7 @@ private extension SaladViewController {
         collectionView.backgroundColor = .mainColor
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(ReadCollectionViewCell.self, forCellWithReuseIdentifier: ReadCollectionViewCell.identifier)
+        collectionView.register(ReceptCell.self, forCellWithReuseIdentifier: ReceptCell.identifier)
         collectionView.frame = view.bounds
     }
 }

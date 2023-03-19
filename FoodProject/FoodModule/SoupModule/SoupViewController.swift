@@ -26,6 +26,10 @@ final class SoupViewController: UIViewController, SoupViewProtocol {
         super.viewDidLoad()
         setupView()
         presenter?.viewDidLoaded()
+        let appearcen = UINavigationBarAppearance()
+        appearcen.configureWithOpaqueBackground()
+        appearcen.backgroundColor = .navigationBarColor
+        navigationController!.navigationBar.scrollEdgeAppearance = appearcen
     }
     
     func sucsess() {
@@ -52,7 +56,7 @@ extension SoupViewController: UICollectionViewDelegate {
         let router = DetailRouter(navigationController: nav, builder: builder)
         let test = builder.buildDetail(id: (presenter?.viewModel?.salads?.results?[indexPath.row].id)!, router: router)
         let controller = UINavigationController(rootViewController: test)
-//        controller.modalPresentationStyle = .fullScreen
+        controller.modalPresentationStyle = .fullScreen
         
         present(controller, animated: true)
     }
@@ -73,12 +77,12 @@ extension SoupViewController: UICollectionViewDataSource {
 
 extension SoupViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width - 40,
-                      height: view.frame.size.width / 2 + 80)
+        return CGSize(width: view.frame.size.width - UIScreen.main.bounds.width / 25,
+                      height: view.frame.size.width / 2 + 60)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 10
     }
 }
 
