@@ -19,25 +19,20 @@ class DetailViewController: UIViewController {
     private let nameOfRecipe: UILabel = {
         let name = UILabel()
         name.textColor = .white
-        name.font = .systemFont(ofSize: 20, weight: .semibold)
-        name.setContentHuggingPriority(.defaultHigh + 2, for: .vertical)
+        name.numberOfLines = 0
+        name.font = .systemFont(ofSize: 25, weight: .bold)
         return name
     }()
     
     private let descriptionOfRecipe: UILabel = {
         let name = UILabel()
         name.textColor = .white
-        name.setContentHuggingPriority(.defaultHigh + 2, for: .vertical)
-        name.font = .systemFont(ofSize: 15, weight: .light)
+        name.font = .systemFont(ofSize: 15, weight: .regular)
         name.numberOfLines = 0
         return name
     }()
     
-    private let justView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    private let justView = UIView()
     
     private lazy var barButton: UIButton = {
         let button = UIButton(type: .system)
@@ -61,15 +56,12 @@ class DetailViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var tableView: UITableView = {
-        let view = UITableView()
+    private lazy var tableView: AutoSizing = {
+        let view = AutoSizing()
         view.backgroundColor = .mainColor
-        view.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.dataSource = self
         view.delegate = self
         view.showsVerticalScrollIndicator = false
@@ -80,10 +72,9 @@ class DetailViewController: UIViewController {
     }()
     
     private lazy var stackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [imageOfRecipe,nameOfRecipe,descriptionOfRecipe,customView,tableView])
+        let view = UIStackView(arrangedSubviews: [nameOfRecipe,descriptionOfRecipe,customView])
         view.axis = .vertical
-        view.spacing = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.spacing = 15
         return view
     }()
     
@@ -130,34 +121,33 @@ private extension DetailViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(justView)
         justView.addSubview(stackView)
-        customView.translatesAutoresizingMaskIntoConstraints = false
+        justView.addSubview(tableView)
+        justView.addSubview(imageOfRecipe)
+        
         scrollView.snp.makeConstraints { make in
-            make.leadingMargin.topMargin.trailingMargin.bottomMargin.equalToSuperview()
-            make.height.equalTo(justView.snp.height)
+            make.edges.equalToSuperview()
             make.width.equalTo(justView.snp.width)
         }
         
         justView.snp.makeConstraints { make in
-            make.leadingMargin.trailingMargin.top.bottomMargin.equalTo(scrollView)
-            make.height.equalTo(scrollView.snp.height)
+            make.edges.equalTo(scrollView)
         }
         
         stackView.snp.makeConstraints { make in
-            make.bottomMargin.equalTo(justView).inset(10)
-            make.top.equalTo(justView)
-            make.trailingMargin.leadingMargin.equalTo(justView)
-        }
-        
-        customView.snp.makeConstraints { make in
-            make.height.greaterThanOrEqualTo(100)
+            make.top.equalTo(imageOfRecipe.snp.bottomMargin).offset(50)
+            make.horizontalEdges.equalTo(justView).inset(15)
         }
         
         imageOfRecipe.snp.makeConstraints { make in
-            make.height.equalTo(250)
+            make.top.equalTo(justView)
+            make.horizontalEdges.equalTo(justView)
+            make.height.equalTo(200)
         }
         
         tableView.snp.makeConstraints { make in
-            make.height.greaterThanOrEqualTo(200)
+            make.topMargin.equalTo(stackView.snp.bottomMargin).inset(-20)
+            make.horizontalEdges.equalTo(justView).inset(15)
+            make.bottomMargin.equalTo(justView).inset(15)
         }
     }
 }
@@ -172,7 +162,9 @@ extension DetailViewController: UITableViewDataSource {
         cell = UITableViewCell(style: .value1, reuseIdentifier: "privet")
         guard let model = presenter?.viewModel?.detailViewModel?.extendedIngredients[indexPath.row] else { return UITableViewCell() }
         cell.backgroundColor = .mainColor
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = .lightGray
+        cell.textLabel?.font = .systemFont(ofSize: 15, weight: .light)
+        cell.detailTextLabel?.font = .systemFont(ofSize: 18, weight: .light)
         cell.detailTextLabel?.textColor = .white
         cell.textLabel?.text = presenter?.viewModel?.detailViewModel?.extendedIngredients[indexPath.row].name
         cell.detailTextLabel?.text = "\(model.amount) \(model.measures.us.unitLong)"
@@ -183,5 +175,18 @@ extension DetailViewController: UITableViewDataSource {
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+
+class AutoSizing: UITableView {
+
+    override var intrinsicContentSize: CGSize {
+        return contentSize
+    }
+    
+    override func reloadData() {
+        super.reloadData()
+        invalidateIntrinsicContentSize()
     }
 }

@@ -72,8 +72,8 @@ extension SaladViewController: UICollectionViewDataSource {
 
 extension SaladViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width - 40,
-                      height: view.frame.size.width / 2 + 80)
+        return CGSize(width: view.frame.size.width - UIScreen.main.bounds.width / 25,
+                      height: view.frame.size.width / 2 + 60)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

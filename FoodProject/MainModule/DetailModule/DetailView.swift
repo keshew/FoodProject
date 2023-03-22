@@ -5,33 +5,32 @@ class DetailView: UIView {
     private let willBeReadyIn: UILabel = {
         let name = UILabel()
         name.textColor = .white
-        name.translatesAutoresizingMaskIntoConstraints = false
-        name.text = "Будет готово через"
+        name.text = "Will be ready in"
+        name.font = .systemFont(ofSize: 15, weight: .semibold)
         return name
     }()
     
     private let willBeReadyInTime: UILabel = {
         let name = UILabel()
         name.textColor = .white
-        name.translatesAutoresizingMaskIntoConstraints = false
-        name.text = "1111"
+        name.font = .systemFont(ofSize: 12, weight: .regular)
+        name.text = ""
         return name
     }()
     
     private let inKitchen: UILabel = {
         let name = UILabel()
         name.textColor = .white
-        name.text = "Время на кухне"
-        name.translatesAutoresizingMaskIntoConstraints = false
-        
+        name.text = "Time in the kitchen"
+        name.font = .systemFont(ofSize: 15, weight: .bold)
         return name
     }()
     
     private let inKitchenTime: UILabel = {
         let name = UILabel()
         name.textColor = .white
-        name.translatesAutoresizingMaskIntoConstraints = false
-        name.text = "0000000"
+        name.text = ""
+        name.font = .systemFont(ofSize: 12, weight: .regular)
         return name
     }()
     
@@ -39,8 +38,8 @@ class DetailView: UIView {
         let name = UILabel()
         name.textColor = .white
         name.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
-        name.translatesAutoresizingMaskIntoConstraints = false
-        name.text = "35 people like this"
+        name.text = ""
+        name.font = .systemFont(ofSize: 12, weight: .regular)
         return name
     }()
     
@@ -48,7 +47,7 @@ class DetailView: UIView {
         let name = UILabel()
         name.textColor = .white
         name.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
-        name.translatesAutoresizingMaskIntoConstraints = false
+        name.font = .systemFont(ofSize: 15, weight: .bold)
         name.text = "Number of likes"
         return name
     }()
@@ -56,28 +55,24 @@ class DetailView: UIView {
     private lazy var firstStack: UIStackView = {
         let view = UIStackView(arrangedSubviews: [willBeReadyIn, willBeReadyInTime])
         view.axis = .vertical
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var secondStack: UIStackView = {
         let view = UIStackView(arrangedSubviews: [inKitchen, inKitchenTime])
         view.axis = .vertical
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var thirdStack: UIStackView = {
         let view = UIStackView(arrangedSubviews: [likesNumber, barButton])
         view.axis = .vertical
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var mainStack: UIStackView = {
         let view = UIStackView(arrangedSubviews: [firstStack, secondStack])
         view.spacing = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -90,11 +85,13 @@ class DetailView: UIView {
         addSubview(mainStack)
         addSubview(thirdStack)
         mainStack.snp.makeConstraints { make in
-            make.topMargin.leadingMargin.trailingMargin.equalToSuperview()
+            make.topMargin.equalToSuperview()
+            make.leadingMargin.trailingMargin.equalToSuperview().inset(10)
         }
         thirdStack.snp.makeConstraints { make in
             make.topMargin.equalTo(mainStack.snp.bottomMargin).offset(10)
-            make.bottomMargin.leadingMargin.equalToSuperview()
+            make.leadingMargin.equalToSuperview().inset(10)
+            make.bottomMargin.equalToSuperview()
         }
     }
     

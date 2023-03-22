@@ -24,7 +24,7 @@ fileprivate enum APIType {
     case getDesserts
     
     var apiKey: String {
-        return "29b6b28f28904fc3a4946eed49a5833b"
+        return "a1540512d48a4a6e805060358ee8ee2e"
     }
     //29b6b28f28904fc3a4946eed49a5833b
     //e5ddc77dc83842aba66108fb0ca9d2d2
@@ -42,7 +42,7 @@ fileprivate enum APIType {
         case .getDesserts: return "complexSearch?type=dessert&apiKey=\(apiKey)&"
         }
     }
-    //https://api.spoonacular.com/recipes/716406/information?apiKey=29b6b28f28904fc3a4946eed49a5833b&
+    //https://api.spoonacular.com/recipes/716406/information?apiKey=a1540512d48a4a6e805060358ee8ee2e&
     
     var baseURL: String {
         return "https://api.spoonacular.com/recipes/"
@@ -117,7 +117,7 @@ final class NetworkManager: NetworkManagerProtocol {
     }
     
     func getCurrentRecept(id: Int, completion: @escaping (Result<Recipe, Error>) -> Void) {
-        let request = URLRequest(url: URL(string: "https://api.spoonacular.com/recipes/\(id)/information?apiKey=29b6b28f28904fc3a4946eed49a5833b&")!)
+        let request = URLRequest(url: URL(string: "https://api.spoonacular.com/recipes/\(id)/information?apiKey=a1540512d48a4a6e805060358ee8ee2e&")!)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
