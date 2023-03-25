@@ -1,10 +1,3 @@
-//
-//  ReceptCell.swift
-//  FoodProject
-//
-//  Created by Артём Коротков on 15.03.2023.
-//
-
 import UIKit
 
 class ReceptCell: UICollectionViewCell {
@@ -22,17 +15,16 @@ class ReceptCell: UICollectionViewCell {
         return image
     }()
     
-    private let imageOfTime: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        image.image = UIImage(named: "timer")
-        return image
-    }()
-    
-    private let timeLabel: UILabel = {
+    private let receptLabel: UILabel = {
         let label = UILabel()
-        label.text = "1.23 gour"
-        label.textColor = UIColor(cgColor: CGColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1))
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "RECEPT"
+        label.textAlignment = .center
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 10
+        label.font = .medium11
+        label.backgroundColor = .yellow
+        label.textColor = .black
         return label
     }()
     
@@ -40,21 +32,14 @@ class ReceptCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .white
         label.text = "Loading..."
-        label.font = .preferredFont(forTextStyle: .headline)
+        label.font = .medium18
         label.numberOfLines = 2
         return label
-    }()
-    
-    private lazy var timeStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [imageOfTime, timeLabel])
-        stack.spacing = 10
-        return stack
     }()
     
     private lazy var mainStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [imageOfRecept, nameOfRecept])
         stack.axis = .vertical
-        stack.spacing = 5
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -68,30 +53,33 @@ class ReceptCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(image: String?, title: String, time: String) {
+    func setupCell(image: String?, title: String) {
         let placeholderImage = "https://wallpaperaccess.com/full/767277.jpg"
         imageOfRecept.kf.indicatorType = .activity
         imageOfRecept.kf.setImage(with: URL(string: image ?? placeholderImage))
         nameOfRecept.text = title
-        timeLabel.text = time
     }
 }
 
 private extension ReceptCell {
     func setupView() {
         contentView.addSubview(mainStackView)
+        imageOfRecept.addSubview(receptLabel)
+        
         mainStackView.snp.makeConstraints { make in
             make.topMargin.equalToSuperview().inset(10)
             make.trailingMargin.leadingMargin.bottomMargin.equalToSuperview()
         }
         
+        receptLabel.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(10)
+            make.leadingMargin.equalToSuperview().inset(10)
+            make.width.equalTo(60)
+            make.height.equalTo(20)
+        }
+        
         imageOfRecept.snp.makeConstraints { make in
             make.height.equalTo(200)
         }
-        
-//        imageOfTime.snp.makeConstraints { make in
-//            make.height.equalTo(20)
-//            make.width.equalTo(20)
-//        }
     }
 }

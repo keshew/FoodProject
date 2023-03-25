@@ -3,9 +3,11 @@ import UIKit
 protocol Builder: AnyObject {
     func buildRead(router: ReadRouterProtocol) -> UIViewController
     func buildSearch(router: SearchRouterProtocol) -> UIViewController
-    func buildSalad(router: SaladRouterProtocol) -> UIViewController
-    func buildSoup(router: SoupRouterProtocol) -> UIViewController
-    func buildDetail(id: Int, router: DetailRouterProtocol) -> UIViewController 
+    func buildFood(request: URLRequest, router: FoodRouterProtocol) -> UIViewController
+    func buildDetail(id: Int, router: DetailRouterProtocol) -> UIViewController
+    func buildFavourite(router: FavouriteRouterProtocol) -> UIViewController
+    func buildProfile(router: ProfileRouterProtocol) -> UIViewController
+    func buildMain(router: MainRouterProtocol) -> UIViewController
 }
 class ModuleBuilder: Builder { 
     func buildRead(router: ReadRouterProtocol) -> UIViewController {
@@ -24,18 +26,10 @@ class ModuleBuilder: Builder {
         return view
     }
     
-    func buildSalad(router: SaladRouterProtocol) -> UIViewController {
-        let view = SaladViewController()
+    func buildFood(request: URLRequest, router: FoodRouterProtocol) -> UIViewController {
+        let view = FoodViewController()
         let network = NetworkManager()
-        let presenter = SaladPresenter(view: view, network: network, router: router)
-        view.presenter = presenter
-        return view
-    }
-    
-    func buildSoup(router: SoupRouterProtocol) -> UIViewController {
-        let view = SoupViewController()
-        let network = NetworkManager()
-        let presenter = SoupPresenter(view: view, network: network, router: router)
+        let presenter = FoodPresenter(view: view, network: network, router: router, request: request)
         view.presenter = presenter
         return view
     }
@@ -44,6 +38,30 @@ class ModuleBuilder: Builder {
         let view = DetailViewController()
         let network = NetworkManager()
         let presenter = DetailPresenter(view: view, network: network, router: router, id: id)
+        view.presenter = presenter
+        return view
+    }
+    
+    func buildFavourite(router: FavouriteRouterProtocol) -> UIViewController {
+        let view = FavouriteViewController()
+        let network = NetworkManager()
+        let presenter = FavouritePresenter(view: view, network: network, router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func buildProfile(router: ProfileRouterProtocol) -> UIViewController {
+        let view = ProfileViewController()
+        let network = NetworkManager()
+        let presenter = ProfilePresenter(view: view, network: network, router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func buildMain(router: MainRouterProtocol) -> UIViewController {
+        let view = MainViewController()
+        let network = NetworkManager()
+        let presenter = MainPresenter(view: view, network: network, router: router)
         view.presenter = presenter
         return view
     }

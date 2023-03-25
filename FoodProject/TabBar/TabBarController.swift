@@ -12,17 +12,35 @@ final class TabBarViewController: UITabBarController {
         let builder = ModuleBuilder()
         let readRouter = ReadRouter(navigationController: navControl, builder: builder)
         let searchRouter = SearchRouter(navigationController: navControl, builder: builder)
+        let favouriteRouter = FavouriteRouter(navigationController: navControl, builder: builder)
+        let profileRouter = ProfileRouter(navigationController: navControl, builder: builder)
+        let mainRouter = MainRouter(navigationController: navControl, builder: builder)
         
         setViewControllers([
             generateViewControllers(
+                viewController: builder.buildMain(router: mainRouter),
+                title: "Main",
+                image: UIImage(systemName: "house.fill")
+            ),
+            generateViewControllers(
                 viewController: builder.buildSearch(router: searchRouter),
-                title: "Поиск",
+                title: "Search",
                 image: UIImage(systemName: "magnifyingglass")
             ),
             generateViewControllers(
                 viewController: builder.buildRead(router: readRouter),
-                title: "Почитать",
+                title: "Read",
                 image: UIImage(systemName: "book")
+            ),
+            generateViewControllers(
+                viewController: builder.buildFavourite(router: favouriteRouter),
+                title: "Favourite",
+                image: UIImage(systemName: "heart")
+            ),
+            generateViewControllers(
+                viewController: builder.buildProfile(router: profileRouter),
+                title: "Profile",
+                image: UIImage(systemName: "person")
             )],animated: true)
     }
 
