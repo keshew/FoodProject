@@ -83,6 +83,7 @@ extension FavouriteViewController: FavouriteViewProtocol {
 private extension FavouriteViewController {
     func setupView() {
         title = "Favourite"
+        navigationController?.navigationBar.prefersLargeTitles = false
         view.addSubview(stack)
         view.addSubview(stack2)
         stack.snp.makeConstraints { make in

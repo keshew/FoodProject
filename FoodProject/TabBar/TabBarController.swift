@@ -51,6 +51,7 @@ final class TabBarViewController: UITabBarController {
         let appearcen = UINavigationBarAppearance()
         appearcen.configureWithOpaqueBackground()
         appearcen.backgroundColor = .navigationBarColor
+        appearcen.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearcen.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
 
         let navigationController = UINavigationController(rootViewController: viewController)

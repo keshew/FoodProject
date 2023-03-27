@@ -18,11 +18,11 @@ class SearchViewController: UIViewController {
     }
     
     fileprivate enum MenuImage: String, CaseIterable {
-        case terms = "first"
-        case policy = "second"
-        case edtit = "salat"
-        case faq = "zakuska"
-        case settings = "bread"
+        case terms = "aboutFood"
+        case policy = "ZOJ"
+        case edtit = "children"
+        case faq = "meat"
+        case settings = "frozen"
         case liked = "sous"
         case drinks = "drink"
         case desetrs = "desert"
@@ -43,9 +43,9 @@ class SearchViewController: UIViewController {
         btn.setTitle(" All filters", for: .normal)
         btn.titleLabel?.font = .semiBold16
         return btn
-
+        
     }()
-
+    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -69,6 +69,17 @@ class SearchViewController: UIViewController {
         setupView()
         setupCollectionView()
     }
+    
+    let array = [
+        APIType.getSoup.request,
+        APIType.getSecond.request,
+        APIType.getSalad.request,
+        APIType.getSnack.request,
+        APIType.getBread.request,
+        APIType.getSous.request,
+        APIType.getDrinks.request,
+        APIType.getDesserts.request
+    ]
     
     func presentController(viewController: UIViewController) {
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -96,26 +107,26 @@ private extension SearchViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
-  
-      
+        
+        
         scrollView.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
             make.bottom.equalTo(view.layoutMarginsGuide)
             make.width.equalTo(secondview.snp.width)
             make.height.equalTo(secondview.snp.height).inset(-margis)
         }
-
+        
         secondview.snp.makeConstraints { make in
             make.edges.equalTo(scrollView.snp.edges)
             make.width.equalTo(scrollView.snp.width)
             make.height.equalTo(scrollView.snp.height).inset(margis)
         }
-
+        
         filterButton.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(secondview).inset(20)
             make.height.equalTo(55)
         }
-
+        
         collectionView.snp.makeConstraints { make in
             make.leadingMargin.trailingMargin.equalTo(secondview)
             make.top.equalTo(filterButton.snp_bottomMargin).inset(-20)
@@ -137,19 +148,7 @@ private extension SearchViewController {
 
 extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0: presenter?.presentGeneric(request: APIType.getSoup.request)
-        case 1: presenter?.presentGeneric(request: APIType.getSecond.request)
-        case 2: presenter?.presentGeneric(request: APIType.getSalad.request)
-        case 3: presenter?.presentGeneric(request: APIType.getSnack.request)
-        case 4: presenter?.presentGeneric(request: APIType.getBread.request)
-        case 5: presenter?.presentGeneric(request: APIType.getSous.request)
-        case 6: presenter?.presentGeneric(request: APIType.getDrinks.request)
-        case 7: presenter?.presentGeneric(request: APIType.getDesserts.request)
-        
-        default:
-            print("lmap")
-        }
+        presenter?.presentGeneric(request: array[indexPath.row])
     }
 }
 

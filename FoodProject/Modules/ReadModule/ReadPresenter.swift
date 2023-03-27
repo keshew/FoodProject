@@ -20,18 +20,18 @@ class ReadPresenter {
     
     func viewDidLoaded() {
         self.viewModel = ReadViewModel()
-        self.network?.getFood(completion: { [weak self] food in
-            DispatchQueue.main.async {
-                guard let self else { return }
-                switch food {
-                case .success(let foods):
-                    self.viewModel?.food = foods
-                    self.view?.sucsess()
-                case .failure(let error):
-                    self.view?.faillure(error: error)
-                }
-            }
-        })
+//        self.network?.getFood(completion: { [weak self] food in
+//            DispatchQueue.main.async {
+//                guard let self else { return }
+//                switch food {
+//                case .success(let foods):
+//                    self.viewModel?.food = foods
+//                    self.view?.sucsess()
+//                case .failure(let error):
+//                    self.view?.faillure(error: error)
+//                }
+//            }
+//        })
     }
 }
 

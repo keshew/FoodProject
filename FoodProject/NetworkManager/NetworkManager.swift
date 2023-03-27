@@ -4,12 +4,13 @@ import UIKit
 // https://api.spoonacular.com/recipes/random?number=20&apiKey=29b6b28f28904fc3a4946eed49a5833b& mnogo recept
 
 //https://api.spoonacular.com/recipes/complexSearch?type=soup&apiKey=29b6b28f28904fc3a4946eed49a5833b& салаты
-
+//29b6b28f28904fc3a4946eed49a5833b
+//e5ddc77dc83842aba66108fb0ca9d2d2
+//a1540512d48a4a6e805060358ee8ee2e
+//https://api.spoonacular.com/recipes/716406/information?apiKey=a1540512d48a4a6e805060358ee8ee2e&
 
 protocol NetworkManagerProtocol: AnyObject {
     func getFood(completion: @escaping (Result<Food, Error>) -> Void)
-    func getSalad(completion: @escaping (Result<Salad, Error>) -> Void)
-    func getSoup(completion: @escaping (Result<Salad, Error>) -> Void)
     func getCurrentRecept(id: Int, completion: @escaping (Result<Recipe, Error>) -> Void)
     func getGeneric(path: URLRequest, completion: @escaping (Result<Salad, Error>) -> Void)
 }
@@ -26,11 +27,8 @@ enum APIType {
     case getDesserts
     
     var apiKey: String {
-        return "e5ddc77dc83842aba66108fb0ca9d2d2"
+        return "a1540512d48a4a6e805060358ee8ee2e"
     }
-    //29b6b28f28904fc3a4946eed49a5833b
-    //e5ddc77dc83842aba66108fb0ca9d2d2
-    //a1540512d48a4a6e805060358ee8ee2e
     
     var path: String {
         switch self {
@@ -45,7 +43,6 @@ enum APIType {
         case .getDesserts: return "complexSearch?type=dessert&apiKey=\(apiKey)&"
         }
     }
-    //https://api.spoonacular.com/recipes/716406/information?apiKey=a1540512d48a4a6e805060358ee8ee2e&
     
     var baseURL: String {
         return "https://api.spoonacular.com/recipes/"
@@ -83,42 +80,6 @@ final class NetworkManager: NetworkManagerProtocol {
         task.resume()
     }
     
-    func getSalad(completion: @escaping (Result<Salad, Error>) -> Void) {
-        let request = APIType.getSalad.request
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            do {
-                guard let data else { return }
-                let obj = try JSONDecoder().decode(Salad.self, from: data)
-                completion(.success(obj))
-            } catch {
-                completion(.failure(error))
-            }
-        }
-        task.resume()
-    }
-    
-    func getSoup(completion: @escaping (Result<Salad, Error>) -> Void) {
-        let request = APIType.getSoup.request
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            do {
-                guard let data else { return }
-                let obj = try JSONDecoder().decode(Salad.self, from: data)
-                completion(.success(obj))
-            } catch {
-                completion(.failure(error))
-            }
-        }
-        task.resume()
-    }
-    
     func getGeneric(path: URLRequest, completion: @escaping (Result<Salad, Error>) -> Void) {
         let request = path
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -138,7 +99,7 @@ final class NetworkManager: NetworkManagerProtocol {
     }
     
     func getCurrentRecept(id: Int, completion: @escaping (Result<Recipe, Error>) -> Void) {
-        let request = URLRequest(url: URL(string: "https://api.spoonacular.com/recipes/\(id)/information?apiKey=e5ddc77dc83842aba66108fb0ca9d2d2&")!)
+        let request = URLRequest(url: URL(string: "https://api.spoonacular.com/recipes/\(id)/information?apiKey=a1540512d48a4a6e805060358ee8ee2e&")!)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))

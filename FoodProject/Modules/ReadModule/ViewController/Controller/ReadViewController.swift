@@ -7,6 +7,22 @@ protocol ReadViewProtocol: AnyObject {
 }
 
 final class ReadViewController: UIViewController, ReadViewProtocol {
+    
+    fileprivate enum MenuOptions: String, CaseIterable {
+        case terms = "All about food"
+        case policy = "Healthy lifestyle"
+        case edtit = "Cooking for children"
+        case faq = "Men's cuisine"
+        case settings = "Blanks"
+    }
+    
+    fileprivate enum MenuImage: String, CaseIterable {
+        case terms = "aboutFood"
+        case policy = "ZOJ"
+        case edtit = "children"
+        case faq = "meat"
+        case settings = "frozen"
+    }
 
     var presenter: ReadPresenterProtocol?
     
@@ -39,13 +55,14 @@ extension ReadViewController: UICollectionViewDelegate {
 
 extension ReadViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        presenter?.viewModel?.food?.recipes?.count ?? 10
+        MenuOptions.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let image = UIImage(named: MenuImage.allCases[indexPath.row].rawValue) else { return UICollectionViewCell()}
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReadCollectionViewCell.identifier, for: indexPath) as? ReadCollectionViewCell else { return UICollectionViewCell() }
-        cell.setupCell(image: presenter?.viewModel?.food?.recipes?[indexPath.row].image,
-                       title: presenter?.viewModel?.food?.recipes?[indexPath.row].title ?? "")
+        cell.setupCell(image: image,
+                       title: MenuOptions.allCases[indexPath.row].rawValue)
         return cell
     }
 }
@@ -69,6 +86,9 @@ private extension ReadViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ReadCollectionViewCell.self, forCellWithReuseIdentifier: ReadCollectionViewCell.identifier)
-        collectionView.frame = view.bounds
+        
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }

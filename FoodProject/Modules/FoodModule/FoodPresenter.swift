@@ -28,8 +28,9 @@ class FoodPresenter {
     }
     
     func viewDidLoaded() {
+        guard let request = request else { return }
         self.viewModel = FoodViewModel()
-        self.network?.getGeneric(path: request!, completion: { [weak self] sous in
+        self.network?.getGeneric(path: request, completion: { [weak self] sous in
             DispatchQueue.main.async {
                 guard let self else { return }
                 switch sous {

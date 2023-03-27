@@ -11,7 +11,7 @@ class ReadCollectionViewCell: UICollectionViewCell {
         let label = UILabelPadding()
         label.text = "Данные загружаются"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.font = .semiBold18
         label.backgroundColor = UIColor(red: 59/255, green: 59/255, blue: 59/255, alpha: 1)
         label.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
         return label
@@ -61,10 +61,8 @@ class ReadCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setupCell(image: String?, title: String? ) {
-        let placeholderImage = "https://wallpaperaccess.com/full/767277.jpg"
-        imageOfFood.kf.indicatorType = .activity
-        imageOfFood.kf.setImage(with: URL(string: image ?? placeholderImage))
+    func setupCell(image: UIImage?, title: String? ) {
+        imageOfFood.image = image
         titleLable.text = title ?? "Error..."
     }
 }
